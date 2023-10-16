@@ -1,11 +1,11 @@
 {
-  "name": "@zarulrahim/react-native-esc-pos",
+  "name": "@arteyazilim/react-native-esc-pos",
   "description": "A React Native ESC/POS module to help you connect to your ESC/POS printer easily.",
   "version": "0.9.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zarulrahim/react-native-escpos.git",
-    "baseUrl": "https://github.com/zarulrahim/react-native-escpos"
+    "url": "git+https://github.com/arteyazilim/react-native-escpos.git",
+    "baseUrl": "https://github.com/arteyazilim/react-native-escpos"
   },
   "license": "MIT",
   "author": {
@@ -25,11 +25,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "react": "17.0.2",
-    "react-native": "0.68.1"
+    "react": "18.2.0",
+    "react-native": "0.72.6"
   },
   "peerDependencies": {
-    "react": "17.0.2",
-    "react-native": "0.68.1"
+    "react": "18.2.0",
+    "react-native": "0.72.6"
   }
 }

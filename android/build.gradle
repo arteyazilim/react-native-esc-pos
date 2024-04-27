@@ -132,9 +132,9 @@ dependencies {
     implementation "com.facebook.react:react-native:+"
     // From node_modules
 
-    implementation 'com.pi4j:pi4j-core:1.2'
-    implementation 'com.pi4j:pi4j-device:1.2'
-    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+    // implementation 'com.pi4j:pi4j-core:1.2'
+    // implementation 'com.pi4j:pi4j-device:1.2'
+    // implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
 
     implementation "androidx.work:work-runtime:2.7.1"
 

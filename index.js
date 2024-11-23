@@ -1,13 +1,12 @@
 import { DeviceEventEmitter, NativeModules } from 'react-native';
 
-const { LayoutBuilder } = NativeModules;
+const { EscPos, LayoutBuilder } = NativeModules;
 
-const EscPos = {
-  ...NativeModules.EscPos,
+const EscPosBlueTooth = {
   addListener(eventName, cb) {
     switch (eventName) {
       case 'bluetoothStateChanged':
-        EscPos.initBluetoothConnectionListener();
+        NativeModules.EscPos.initBluetoothConnectionListener();
         DeviceEventEmitter.addListener('bluetoothStateChanged', cb);
         break;
 
@@ -27,7 +26,9 @@ const EscPos = {
       return NativeModules.EscPos.connectNetworkPrinter(address, port);
     }
   },
+  disconnect() {
+    return NativeModules.EscPos.disconnect();
+  },
 };
 
-export { EscPos, LayoutBuilder };
-export default EscPos;
+export { EscPos, LayoutBuilder, EscPosBlueTooth };

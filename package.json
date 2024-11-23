@@ -25,11 +25,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "react": "18.2.0",
-    "react-native": "0.72.6"
+    "react": "18.3.1",
+    "react-native": "0.76.3"
   },
   "peerDependencies": {
-    "react": "18.2.0",
-    "react-native": "0.72.6"
-  }
+    "react": "18.3.1",
+    "react-native": "0.76.3"
+  },
 }

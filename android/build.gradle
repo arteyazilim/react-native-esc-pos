@@ -143,7 +143,7 @@ dependencies {
 
 if (isNewArchitectureEnabled()) {
     react {
-        jsRootDir = file("../src/")
+        jsRootDir = file("./src/")
         libraryName = "EscPosModule"
         codegenJavaPackageName = "leesiongchan.reactnativeescpos"
     }

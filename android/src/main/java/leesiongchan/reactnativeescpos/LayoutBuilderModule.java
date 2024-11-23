@@ -52,7 +52,7 @@ public class LayoutBuilderModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void createDivider(String symbol, Promise promise) {
+    public void createDivider2(String symbol, Promise promise) {
         promise.resolve(layoutBuilder.createDivider(symbol.charAt(0)));
     }
 

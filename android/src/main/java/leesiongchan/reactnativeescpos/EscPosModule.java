@@ -14,6 +14,7 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 
 import java.io.IOException;
@@ -114,7 +115,7 @@ public class EscPosModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void printBarcode(String str, int nType, int nWidthX, int nHeight, int nHriFontType, int nHriFontPosition, Promise promise) {
+    public void printBarcode2(String str, int nType, int nWidthX, int nHeight, int nHriFontType, int nHriFontPosition, Promise promise) {
         try {
             printerService.printBarcode(str,nType,nWidthX,nHeight,nHriFontType,nHriFontPosition);
             promise.resolve(true);
@@ -173,10 +174,30 @@ public class EscPosModule extends ReactContextBaseJavaModule {
         }
     }
 
+    // @ReactMethod
+    // public void write(byte[] command, Promise promise) {
+    //     printerService.write(command);
+    //     promise.resolve(true);
+    // }
+
     @ReactMethod
-    public void write(byte[] command, Promise promise) {
-        printerService.write(command);
-        promise.resolve(true);
+    public void write(ReadableArray command, Promise promise) {
+        try {
+            // ReadableArray -> byte[]
+            byte[] byteArray = new byte[command.size()];
+            for (int i = 0; i < command.size(); i++) {
+                byteArray[i] = (byte) command.getInt(i); // Her elemanı byte'a dönüştürün
+            }
+
+            // printerService.write(byte[]) çağırabilirsiniz
+            printerService.write(byteArray);
+
+            // Başarıyla tamamlandığında
+            promise.resolve(true);
+        } catch (Exception e) {
+            // Hata durumunda
+            promise.reject("WRITE_ERROR", "Write operation failed", e);
+        }
     }
 
     @ReactMethod
